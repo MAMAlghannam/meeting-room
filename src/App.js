@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div style={{display: 'flex', flex: 1, flexDirection: 'column'}} className="App">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +17,10 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      {/* Hello to the meeting room app */}
+      <div style={{height: 100, backgroundColor: "#62DDBD"}} />
+      <div style={{flex: 1, backgroundColor: "lightgrey"}} />
     </div>
   );
 }

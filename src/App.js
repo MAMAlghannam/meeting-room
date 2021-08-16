@@ -1,26 +1,27 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Login from './pages/Login';
+import Booking from './pages/Booking';
+import { useState } from 'react';
 
 function App() {
+
+  const [userInfo, setUserInfo] = useState(null);
+
   return (
-    <div style={{display: 'flex', flex: 1, flexDirection: 'column'}} className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {/* Hello to the meeting room app */}
-      <div style={{height: 100, backgroundColor: "#62DDBD"}} />
-      <div style={{flex: 1, backgroundColor: "lightgrey"}} />
+    <div style={{display: 'flex', flex: 1, flexDirection: 'column'}} dir="rtl" className="App">
+      <header className="App-header" >
+        <span>&nbsp;</span>
+        <span style={{fontSize: 20}} >عنوان الصفحة</span>
+        <span>&nbsp;</span>
+      </header>
+      <div style={{display: 'flex', flex: 10, backgroundColor: "lightgrey", overflowY: 'auto'}} >
+      {  userInfo == null ?
+        <Login setUserInfo={setUserInfo} />
+        :
+        <Booking />
+      }
+      </div>
     </div>
   );
 }

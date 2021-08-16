@@ -1,0 +1,42 @@
+input[type="date"], input[type="time"]{
+    border: none;
+    outline: none;
+    /* padding: 15px; */
+    height: 35px;
+    border-radius: 7px;
+    -webkit-appearance: none;
+    /* -webkit-min-logical-width: 100%; */
+    background-color: white;
+    align-items: center;
+}
+
+#bookBtn {
+    margin-top: 35px;
+    width: 100%;
+    background-color: rgb(27, 148, 32);
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: none;
+    outline: none;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#booked-times-table {
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#booked-times-table tr, #booked-times-table td  {
+    /* border-collapse: collapse; */
+    border-bottom: 1px solid grey;
+    text-align: center;
+    padding: 5px;
+}

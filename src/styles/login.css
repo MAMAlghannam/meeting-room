@@ -4,12 +4,13 @@
     flex-direction: column;
 }
 
-.login-form input[type="text"] {
+.login-form input[type="text"], .login-form input[type="password"] {
     padding: 10px;
-    border: 1px solid grey;
     outline: none;
-    border-radius: 4px;
+    border-radius: 7px;
     font-size: 18px;
+    background-color: #FCFCFC;
+    border: 2px solid #D7D7D9;
 }
 
 .login-form button{
@@ -19,7 +20,7 @@
     padding-right: 12px;
     border: none;
     outline: none;
-    background-color: #11324D;
+    background-color: #9E772B;
     color: white;
     font-size: 16px;
     border-radius: 10px;

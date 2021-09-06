@@ -15,7 +15,7 @@ function App() {
         <span style={{fontSize: 20}} >عنوان الصفحة</span>
         <span>&nbsp;</span>
       </header>
-      <div style={{display: 'flex', flex: 10, backgroundColor: "lightgrey", overflowY: 'auto'}} >
+      <div style={{display: 'flex', flex: 10, backgroundColor: "#E4E4E4", overflowY: 'auto'}} >
       {  userInfo == null ?
         <Login setUserInfo={setUserInfo} />
         :

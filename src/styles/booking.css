@@ -1,4 +1,4 @@
-input[type="date"], input[type="time"]{
+input[type="date"] {
     border: none;
     outline: none;
     /* padding: 15px; */
@@ -8,6 +8,18 @@ input[type="date"], input[type="time"]{
     /* -webkit-min-logical-width: 100%; */
     background-color: white;
     align-items: center;
+    background-color: #FCFCFC;
+    border: 2px solid #D7D7D9;
+}
+
+select {
+    -webkit-appearance: none;
+    background-color: white;
+    border: none;
+    height: 35px;
+    border-radius: 7px;
+    outline: none;
+    width: 100%;
 }
 
 #bookBtn {

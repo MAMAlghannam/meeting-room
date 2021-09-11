@@ -12,43 +12,56 @@ input[type="date"] {
     border: 2px solid #D7D7D9;
 }
 
-select {
-    -webkit-appearance: none;
-    background-color: white;
-    border: none;
-    height: 35px;
-    border-radius: 7px;
-    outline: none;
-    width: 100%;
+.time-card-container {
+    padding: 15px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap
 }
 
-#bookBtn {
-    margin-top: 35px;
-    width: 100%;
-    background-color: rgb(27, 148, 32);
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 7px;
-    padding: 3px;
-    padding-left: 12px;
-    padding-right: 12px;
+.time-card {
+    position: relative;
     border: none;
-    outline: none;
-    color: white;
+    padding: 8px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    width: 47%;
+    height: 150px;
+    margin: 5px;
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-#booked-times-table {
-    margin-top: 10px;
-    border-collapse: collapse;
-    width: 100%;
+.time-card.booked {
+    background-color: #B12028;
 }
 
-#booked-times-table tr, #booked-times-table td  {
-    /* border-collapse: collapse; */
-    border-bottom: 1px solid grey;
-    text-align: center;
-    padding: 5px;
+.time-card.available {
+    background-color: #2AA55C;
+}
+
+.time-card.owner {
+    background-color: #F4F4F4;
+    border: 1px solid #565656;
+    color: #565656;
+}
+
+.time-card .cancelBadge {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* padding: 3px 7px 3px 7px; */
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.time-card:disabled {
+    cursor: not-allowed;
 }

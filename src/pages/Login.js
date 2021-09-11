@@ -1,24 +1,31 @@
+import { useState } from 'react';
 import '../styles/login.css'
 import { BiLogInCircle } from "react-icons/bi";
+import { SpinningCircles } from 'svg-loaders-react'
+import { postRequest } from '../actions/mainActions';
 
-export default function Login({ setUserInfo }){
+export default function Login({ setUserInfo, toast }){
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const login = async (e) => {
         e.preventDefault();
 
-        
-        const result = await fetch(
-            '/api/Values/getCredentials',
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' }, 
-                body: JSON.stringify({ Email: e.target.email.value, Password: e.target.password.value })
-            }
-        )
-        
-        console.log(result)
+        try {
+            setIsLoading(true)
+            const result = await postRequest(
+                '/api/Values/getCredentials', 
+                { Email: e.target.email.value, Password: e.target.password.value }
+            )
+    
+            setUserInfo(result)
 
-        // setUserInfo("userInfoTest")
+        } catch (error) {
+            console.log(error)
+            setIsLoading(false)
+            toast.error("بريدك أو كلمة المرور غير صحيحة", {  })
+        }
+
     }
 
     return (
@@ -28,11 +35,17 @@ export default function Login({ setUserInfo }){
                 <br /> 
                 <input type="password" name={"password"} placeholder="كلمة المرور" />
                 <br />  <br /> 
+
                 <button type='submit'>
-                    <BiLogInCircle color={"white"} size={22} />
+                {
+                    isLoading 
+                    ? <SpinningCircles fill={"white"} width={22} height={22} />
+                    : <BiLogInCircle color={"white"} size={22} />
+                }
                     دخول
                     <BiLogInCircle color={"rgba(0, 0, 0, 0)"} size={22} />
                 </button>
+
             </form>
         </div>
     );
